@@ -1,1 +1,1 @@
-game that finds shortest path
+Game that finds shortest path. Hosted at 
