@@ -1209,7 +1209,7 @@ Board.prototype.toggleButtons = function() {
     }
 
     document.getElementById("startButtonClearBoard").onclick = () => {
-      document.getElementById("startButtonAddObject").innerHTML = '';
+      document.getElementById("startButtonAddObject").innerHTML = '</li>';
 
 
 
