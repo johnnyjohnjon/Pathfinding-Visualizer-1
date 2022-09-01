@@ -1025,6 +1025,9 @@ Board.prototype.changeStartNodeImages = function() {
 let counter = 1;
 Board.prototype.toggleTutorialButtons = function() {
 
+  document.getElementById("tutorial").style.display = "none";
+  this.toggleButtons();
+
   document.getElementById("skipButton").onclick = () => {
     document.getElementById("tutorial").style.display = "none";
     this.toggleButtons();
