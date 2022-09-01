@@ -760,13 +760,28 @@ Board.prototype.clearPath = function(clickedButton) {
 
   document.getElementById("startButtonStart").onclick = () => {
     if (!this.currentAlgorithm) {
-      document.getElementById("startButtonStart").innerHTML = '<button class="btn btn-default navbar-btn" type="button">Pick an Algorithm!</button>'
-    } else {
+      this.currentAlgorithm = "dijkstra";
+      document.getElementById("startButtonStart").innerHTML = '<button id="actualStartButton" class="btn btn-default navbar-btn" type="button">Visualize Dijkstra\'s!</button>'
+      this.clearPath("clickedButton");
+      this.toggleButtons();
+      let success;
+      if (!this.numberOfObjects) {
+        success = weightedSearchAlgorithm(this.nodes, this.start, this.target, this.nodesToAnimate, this.boardArray, this.currentAlgorithm, this.currentHeuristic);
+        launchAnimations(this, success, "weighted");
+      } else {
+        this.isObject = true;
+        success = weightedSearchAlgorithm(this.nodes, this.start, this.object, this.objectNodesToAnimate, this.boardArray, this.currentAlgorithm, this.currentHeuristic);
+        launchAnimations(this, success, "weighted", "object", this.currentAlgorithm, this.currentHeuristic);
+      }
+      this.algoDone = true;
+
+        } else {
       this.clearPath("clickedButton");
       this.toggleButtons();
       let weightedAlgorithms = ["dijkstra", "CLA", "greedy"];
       let unweightedAlgorithms = ["dfs", "bfs"];
       let success;
+      
       if (this.currentAlgorithm === "bidirectional") {
         if (!this.numberOfObjects) {
           success = bidirectional(this.nodes, this.start, this.target, this.nodesToAnimate, this.boardArray, this.currentAlgorithm, this.currentHeuristic, this);
@@ -1068,8 +1083,21 @@ Board.prototype.toggleButtons = function() {
 
     document.getElementById("startButtonStart").onclick = () => {
       if (!this.currentAlgorithm) {
-        document.getElementById("startButtonStart").innerHTML = '<button class="btn btn-default navbar-btn" type="button">Pick an Algorithm!</button>'
-      } else {
+        this.currentAlgorithm = "dijkstra";
+        document.getElementById("startButtonStart").innerHTML = '<button id="actualStartButton" class="btn btn-default navbar-btn" type="button">Visualize Dijkstra\'s!</button>'
+        this.clearPath("clickedButton");
+        this.toggleButtons();
+        let success;
+        if (!this.numberOfObjects) {
+          success = weightedSearchAlgorithm(this.nodes, this.start, this.target, this.nodesToAnimate, this.boardArray, this.currentAlgorithm, this.currentHeuristic);
+          launchAnimations(this, success, "weighted");
+        } else {
+          this.isObject = true;
+          success = weightedSearchAlgorithm(this.nodes, this.start, this.object, this.objectNodesToAnimate, this.boardArray, this.currentAlgorithm, this.currentHeuristic);
+          launchAnimations(this, success, "weighted", "object", this.currentAlgorithm, this.currentHeuristic);
+        }
+        this.algoDone = true;
+            } else {
         this.clearPath("clickedButton");
         this.toggleButtons();
         let weightedAlgorithms = ["dijkstra", "CLA", "CLA", "greedy"];
