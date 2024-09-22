@@ -1,96 +1,187 @@
 <html>
   <head>
     <title>Pathfinder</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link id="cssTheme" rel="stylesheet" href="public/styling/cssBasic.css"/>
-    <link rel="shortcut icon" type="image/png" href="public/styling/icons8-gem-stone-48.png"/>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <link id="cssTheme" rel="stylesheet" href="public/styling/cssBasic.css" />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="public/styling/icons8-gem-stone-48.png"
+    />
   </head>
   <body>
-    <div id='navbarDiv'>
-     <nav class="navbar navbar-inverse">
-       <div class="container-fluid">
-         <div class="navbar-header" style="height: 60;">
-           <a id="refreshButton" class="navbar-brand" href="#" style="font-size: 30; color:#61dafb; padding-left: 40;padding-bottom: 20;">Path</a>
-         </div>
-         <ul class="nav navbar-nav" style="padding-top: 5;">
-           <li class="dropdown">
-             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Algorithms
-             <span class="caret"></span></a>
-             <ul class="dropdown-menu">
-               <li id='startButtonDijkstra'><a href="#">Dijkstra's Algorithm</a></li>
-               <li id='startButtonGreedy'></li>
-               <li id='startButtonBidirectional'></li>
-               <li id='startButtonBFS'><a href="#">Breadth-first Search</a></li>
-               <li id='startButtonDFS'><a href="#">Depth-first Search</a></li>
-             </ul>
-           </li>
-           <li class="dropdown">
-             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Mazes
-             <span class="caret"></span></a>
-             <ul class="dropdown-menu">
-               <li id='startButtonCreateMazeOne'><a href="#">Generate Random Maze</a></li>
-               <li id='startButtonCreateMazeTwo'><a href="#">Generate Recursive Division</a></li>
-               <li id='startButtonCreateMazeThree'></li>
-               <li id='startButtonCreateMazeFour'></li>
-               <li id='startButtonCreateMazeWeights'></li>
-               <li id='startStairDemonstration'></li>
-             </ul>
-           </li>
-           <li class="dropdown">
-            <a id="adjustSpeed" class="dropdown-toggle" data-toggle="dropdown" href="#">Speed: Fast
-            <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li id='adjustFast'><a href="#">Fast</a></li>
-              <li id='adjustAverage'><a href="#">Average</a></li>
-              <li id='adjustSlow'><a href="#">Slow</a></li>
-            </ul>
-          </li>
-           <li id='startButtonAddObject'></li>
-           <li id='startButtonClearBoard'><a href="#">Clear Board</a></li>
-           <li id='startButtonClearWalls'><a href="#">Clear Walls &amp; Weights</a></li>
-           <li id='startButtonClearPath'><a href="#">Clear Path</a></li>
-         </ul>
-         <div style="padding-top: 20;"> <a href="https://www.linkedin.com/in/john-duan/" style="padding-left: 200;"> by Han </a></div>
-
-       </div>
-     </nav>
-   </div>
-    <div id="tutorial" style="background-color: black;color: white; height: 1; width: 1;">
+    <div id="navbarDiv">
+      <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header" style="height: 60">
+            <a
+              id="refreshButton"
+              class="navbar-brand"
+              href="#"
+              style="
+                font-size: 30;
+                color: #61dafb;
+                padding-left: 40;
+                padding-bottom: 20;
+              "
+              >Path</a
+            >
+          </div>
+          <ul class="nav navbar-nav" style="padding-top: 5">
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#"
+                >Algorithms <span class="caret"></span
+              ></a>
+              <ul class="dropdown-menu">
+                <li id="startButtonDijkstra">
+                  <a href="#">Dijkstra's Algorithm</a>
+                </li>
+                <li id="startButtonGreedy"></li>
+                <li id="startButtonBidirectional"></li>
+                <li id="startButtonBFS">
+                  <a href="#">Breadth-first Search</a>
+                </li>
+                <li id="startButtonDFS"><a href="#">Depth-first Search</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#"
+                >Mazes <span class="caret"></span
+              ></a>
+              <ul class="dropdown-menu">
+                <li id="startButtonCreateMazeOne">
+                  <a href="#">Generate Random Maze</a>
+                </li>
+                <li id="startButtonCreateMazeTwo">
+                  <a href="#">Generate Recursive Division</a>
+                </li>
+                <li id="startButtonCreateMazeThree"></li>
+                <li id="startButtonCreateMazeFour"></li>
+                <li id="startButtonCreateMazeWeights"></li>
+                <li id="startStairDemonstration"></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a
+                id="adjustSpeed"
+                class="dropdown-toggle"
+                data-toggle="dropdown"
+                href="#"
+                >Speed: Fast <span class="caret"></span
+              ></a>
+              <ul class="dropdown-menu">
+                <li id="adjustFast"><a href="#">Fast</a></li>
+                <li id="adjustAverage"><a href="#">Average</a></li>
+                <li id="adjustSlow"><a href="#">Slow</a></li>
+              </ul>
+            </li>
+            <li id="startButtonAddObject"></li>
+            <li id="startButtonClearBoard"><a href="#">Clear Board</a></li>
+            <li id="startButtonClearWalls">
+              <a href="#">Clear Walls &amp; Weights</a>
+            </li>
+            <li id="startButtonClearPath"><a href="#">Clear Path</a></li>
+          </ul>
+          <div style="padding-top: 20">
+            <a
+              href="https://www.linkedin.com/in/john-duan/"
+              style="padding-left: 200"
+            >
+              by Han
+            </a>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div
+      id="tutorial"
+      style="background-color: black; color: white; height: 1; width: 1"
+    >
       <!--<h3 style="color:#61dafb;padding-top: 150;">Welcome to Path!</h3>-->
       <h6></h6>
       <p></p>
       <div id="tutorialCounter"></div>
-      <img id="mainTutorialImage" src="public/styling/icons8-algorithm-64.png">
+      <img
+        id="mainTutorialImage"
+        src="public/styling/icons8-algorithm-64.png"
+      />
       <!--<button id="skipButton" class="btn btn-default navbar-btn" type="button" style="background-color:#61dafb ;">close</button> -->
     </div>
-    <div id='mainGrid'>
-      <div id='mainText'>
+    <div id="mainGrid">
+      <div id="mainText">
         <ul>
-          <li id='startButtonStart' style="color: black;"><button id="actualStartButton" class="btn btn-default navbar-btn" type="button" style="color:#61dafb;background-color: black;">Go Visualize!</button></li>
+          <li id="startButtonStart" style="color: black">
+            <button
+              id="actualStartButton"
+              class="btn btn-default navbar-btn"
+              type="button"
+              style="
+                color: #ffffff;
+                background-color: #61dafb;
+                font-size: 20px;
+                padding: 10px 20px;
+                border: 3px solid #ffae42;
+                box-shadow: 0 0 10px #ffae42;
+                transition: transform 0.3s ease;
+              "
+              onmouseover="this.style.transform='scale(1.1)'"
+              onmouseout="this.style.transform='scale(1)'"
+            >
+              Go Visualize!
+            </button>
+          </li>
+          <li>
+            <div class="start"></div>
+            Start Node
+          </li>
+          <li>
+            <div class="target"></div>
+            End Node
+          </li>
 
           <li>
-            <div class="start"></div>Start Node </li>
+            <div class="unvisited"></div>
+            Unvisited Nodes
+          </li>
           <li>
-            <div class="target"></div>End Node</li>
-          
+            <div class="visited"></div>
+            Visited Nodes
+          </li>
           <li>
-            <div class="unvisited"></div>Unvisited Nodes</li>
+            <div class="shortest-path"></div>
+            Shortest Path
+          </li>
           <li>
-            <div class="visited"></div>Visited Nodes</li>
-          <li>
-            <div class="shortest-path"></div>Shortest Path</li>
-          <li>
-            <div class="wall"></div>Draw Wall</li>
+            <div class="wall"></div>
+            Draw Wall
+          </li>
         </ul>
       </div>
-      <div id="algorithmDescriptor" style="color:#FFFFFF"><a style="color: #61dafb;">How Does it Work?</a> First pick an algorithm above from <img src="public/styling/Screen Shot 2022-08-29 at 7.12.32 PM.png" width='60' height='20' >
-       dropdown list above. Create walls by clicking on grid or choosing a maze. Hit <img src="public/styling/Screen Shot 2022-08-29 at 7.33.54 PM.png"width='60' height='20' > to find the shortest path!</div>
-      <table style="background-color: #FFFFFF;" id='board'/>
+      <div id="algorithmDescriptor" style="color: #ffffff">
+        <a style="color: #61dafb">How Does it Work?</a> First pick an algorithm
+        above from
+        <img
+          src="public/styling/Screen Shot 2022-08-29 at 7.12.32 PM.png"
+          width="60"
+          height="20"
+        />
+        dropdown list above. Create walls by clicking on grid or choosing a
+        maze. Hit
+        <img
+          src="public/styling/Screen Shot 2022-08-29 at 7.33.54 PM.png"
+          width="60"
+          height="20"
+        />
+        to find the shortest path!
+      </div>
+      <table style="background-color: #ffffff" id="board" />
     </div>
-    
   </body>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src='public/browser/bundle.js'></script>
+  <script src="public/browser/bundle.js"></script>
 </html>
